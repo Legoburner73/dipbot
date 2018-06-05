@@ -13,7 +13,7 @@ global.C.on('message', M => {
     let args = M.content.split(' ').splice(1);
     if(fs.existsSync("./cmds/"+cmd+".js")) {
       let temp = require("./cmds/"+cmd+".js");
-      temp(M, { 'send':M.channel.send, 'reply':M.reply, 'author':M.author, 'guild':M.guild, 'args':args, 'react':M.react, 'id':M.id, 'channel':M.channel, 'mentions':M.mentions });
+      temp(M, { 'send':M.channel.send, 'reply':M.reply, 'author':M.author, 'guild':M.guild, 'args':args, 'react':M.react, 'id':M.id, 'channel':M.channel, 'mentions':M.mentions, 'sendDM':M.author.send });
     }else{
       //No command.
     }
